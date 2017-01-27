@@ -1,31 +1,26 @@
 package com.futurice.rctaudiotoolkit;
 
+import android.content.ContextWrapper;
 import android.media.MediaPlayer;
 import android.media.PlaybackParams;
-import android.media.AudioAttributes;
-import android.media.AudioAttributes.Builder;
+import android.net.Uri;
 import android.os.Environment;
 import android.os.PowerManager;
-import android.support.annotation.Nullable;
 import android.util.Log;
-import android.net.Uri;
-import android.content.ContextWrapper;
 
 import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
-import java.io.IOException;
 import java.io.File;
-import java.lang.Thread;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;

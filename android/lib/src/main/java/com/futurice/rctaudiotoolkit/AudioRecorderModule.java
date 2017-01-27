@@ -1,32 +1,28 @@
 package com.futurice.rctaudiotoolkit;
 
-import android.media.MediaRecorder;
-import android.os.Environment;
-import android.support.annotation.Nullable;
-import android.util.Log;
-import android.net.Uri;
-import android.webkit.URLUtil;
 import android.content.ContextWrapper;
+import android.media.MediaRecorder;
+import android.net.Uri;
+import android.util.Log;
+import android.webkit.URLUtil;
 
 import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
-import java.io.IOException;
 import java.io.File;
-import java.lang.Thread;
-import java.net.URISyntaxException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
+
 
 public class AudioRecorderModule extends ReactContextBaseJavaModule implements
         MediaRecorder.OnInfoListener, MediaRecorder.OnErrorListener {
@@ -319,4 +315,5 @@ public class AudioRecorderModule extends ReactContextBaseJavaModule implements
         emitEvent(recorderId, "info", data);
 
     }
+
 }
