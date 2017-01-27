@@ -21,7 +21,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Objects;
 
 
 public class AudioRecorderModule extends ReactContextBaseJavaModule implements
@@ -273,7 +272,7 @@ public class AudioRecorderModule extends ReactContextBaseJavaModule implements
     // Find recorderId matching recorder from recorderPool
     private Integer getRecorderId(MediaRecorder recorder) {
         for (Entry<Integer, MediaRecorder> entry : recorderPool.entrySet()) {
-            if (Objects.equals(recorder, entry.getValue())) {
+            if (equals(recorder, entry.getValue())) {
                 return entry.getKey();
             }
         }
@@ -314,6 +313,11 @@ public class AudioRecorderModule extends ReactContextBaseJavaModule implements
 
         emitEvent(recorderId, "info", data);
 
+    }
+
+    // Utils
+    public static boolean equals(Object a, Object b) {
+        return (a == b) || (a != null && a.equals(b));
     }
 
 }
